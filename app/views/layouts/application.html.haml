@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title AwesomeEvents
+    %title GoEvents
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -10,7 +10,7 @@
   %body
     %header.navbar.navbar-expand-sm.navbar-light.bg-light
       .container
-        = link_to "AwesomeEvents", root_path, class:"navbar-brand mr-auto"
+        = link_to "GoEvents", root_path, class:"navbar-brand mr-auto"
         %ul.navbar-nav
           %li.nav-item
             = link_to "イベントを作る", new_event_path, class: "nav-link"
@@ -27,4 +27,4 @@
       - if flash.alert
         .alert.alert-danger
           = flash.alert
-    = yield
+  = yield

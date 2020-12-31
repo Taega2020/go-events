@@ -5,8 +5,14 @@ class EventsController < ApplicationController
 
   def create
     @event = current_user.created_events.build(event_params)
-    if @events.save
-      redirect_to @event, notice: "作成しました"
+
+    respond_to do |format|
+      if @event.save
+        format.html { redirect_to @event, notice: "作成しました" }
+      else
+        format.html { render :new }
+        format.js
+      end
     end
   end
 
