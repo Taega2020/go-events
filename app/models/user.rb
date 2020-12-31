@@ -10,4 +10,6 @@ class User < ApplicationRecord
       user.image_url = image_url
     end
   end
+
+  has_many :created_events, class_name: "Event", foreign_key: "owner_id"
 end
