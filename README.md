@@ -1,24 +1,155 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# コミュニティイベントアプリ
+====
 
-Things you may want to cover:
+## 概要
+このアプリは会社や学校などのコミュニティ内での私的なイベントを開催する際に一度にすべての人に告知でき、また参加する人数も把握できるためという利便性を考えて作りました。
 
-* Ruby version
 
-* System dependencies
+## 使用技術
+* HTML / SCSS
+* JavaScript
+* Ruby 2.6.5
+* Rails 6.0.3.4
+* MySQL
+* RSpec
 
-* Configuration
 
-* Database creation
+## 機能一覧
+* ユーザー管理
+* イベント作成
+* イベント詳細表示
+* イベント一覧表示
+* イベント編集
+* イベント削除
+* イベント参加
 
-* Database initialization
 
-* How to run the test suite
+## URL
+https://go-event.herokuapp.com/
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## テスト用アカウント
+* user     : -
+* email    : -
+* password : -
 
-* ...
+
+## 利用方法
+* ユーザー登録をします
+* 作りたいイベントを「イベントを作る」から作成します
+* イベント開催者以外のログインユーザーはイベントに参加したい場合は参加します
+* 全参加者を確認できます
+* 終わったイベントは非表示になります
+
+
+## 目指した課題解決
+なにかイベントを開催する際はSNSなどでの発信も可能ですが、昨今は様々なアプリケーションがあり、同じコミュニティ内全員に一度に告知するのは意外に手間がかかると感じましたのでこういったプラットフォームがあると便利で手間が省けるのではないかと思いました。また人によっては相手に連絡先を知られたくないという人もおりますのでその点でも都合の良いアプリだと思います。
+
+
+## 実装した機能についてのGIFと説明
+実装中のためなし
+
+
+## 実装予定の機能	
+* deviseでのユーザー登録機能
+* Googleアカウント、Facabookアカウントでのユーザー登録機能
+
+
+## 洗い出した要件
+
+### 機能
+#### ユーザー管理
+* 目的：ユーザー登録してイベント告知や参加の機能を使うことで、誰が告知し、誰が参加したのかを明確にする
+* 詳細：Githubでユーザー登録している人がユーザー登録が出来る。退会は本人のみが出来る
+* ストーリー：アプリケーションを利用者したい人はユーザー登録をする
+
+#### イベント告知機能
+* 目的：イベントを開催したい人が告知機能を使うことで手軽に参加者を集めることが出来る
+* 詳細：イベント名、開催場所、開始時間、終了時間、イベント詳細を入力することでイベントが告知される
+* ストーリー：ログインユーザーが開催したいイベントを告知する
+
+#### イベント詳細機能
+* 目的：イベントの詳細を確認することが出来る
+* 詳細：ログイン状態のひとのみが詳細を確認できる。編集と削除ボタンはログイン状態のイベントを作成した人にのみ表示される。
+* ストーリー：ログインユーザーのみがサイドバーの見たいイベントをクリックすると遷移する
+
+#### イベント一覧機能
+* 目的：開催予定のイベントの一覧を見ることが出来る
+* 詳細：Webページのサイドバーに開催予定のイベントが一覧で表示される。開始時間が過ぎたイベントは非表示になる
+* ストーリー：全ての人が見ることが出来る
+
+#### イベント参加機能
+* 目的：開催されるイベントに参加したい人が簡単に参加表明出来る
+* 詳細：ログインしたユーザーが参加のボタンを押し、コメントを入力すれば参加表明でできる
+* ストーリー：開催者以外のログインユーザーが参加したいイベントに参加登録する
+
+#### イベント編集機能
+* 目的：開催されるイベントの詳細に変更があった場合に編集することが出来る
+* 詳細：イベントを作成したユーザーがログイン状態でアクセスしたときだけ編集ページが表示され、編集できる。
+* ストーリー：イベントの詳細を変更したい場合にイベントを作成したユーザーが詳細ページの「編集する」ボタンを押して編集する
+
+#### イベント削除機能
+* 目的：開催されるイベントが開始前になくなる場合に削除できる
+* 詳細：イベントを作成したユーザーのみがログイン状態で詳細ページからイベントを削除できる
+* ストーリー：イベントが開始前にキャンセルになってしまった場合にイベントを作成したユーザーが詳細ページから「削除する」を押してイベントを削除する
+
+#### Googleアカウント、Facabookアカウントでのユーザー登録機能
+* 目的：新たに登録しなくても元々持っているSNSのアカウントで登録できる
+* 詳細：SNSアカウント（Googleアカウント、Facabookアカウント）を利用したログイン方法を選択肢として追加する
+* ストーリー：ユーザーアカウントの登録方法を「手打ち入力」「Googleアカウントを利用」「Facabookアカウントを利用」の3つから選べるようにする
+  SNSアカウントを選択した場合、既にパスワードは入力されてる状態で表示される
+
+
+## ローカルでの動作方法	
+開発中
+
+
+## テーブル設計
+
+### users テーブル
+
+| Column             | Type       |  Options                  |
+| ------------------ | ---------- | ------------------------- |
+| name               | string     | null: false               |
+| email              | string     | null: false, unique: true |
+| encrypted_password | string     | null: false               |
+
+
+#### Association
+
+-- has_many :tickets
+-- has_many :created_events, class_name: 'Event', foreign_key: 'owner_id'
+
+
+### events テーブル
+
+| Column    | Type       |  Options                  |
+| --------- | ---------- | ------------------------- |
+| owner_id  | string     | null: false               |
+| name      | string     | null: false               |
+| place     | string     | null: false               |
+| start_at  | datetime   | null: false               |
+| end_at    | datetime   | null: false               |
+| content   | text       | null: false               |
+
+
+#### Association
+
+-- has_many :tickets
+-- belongs_to :owner, class_name: 'User'
+
+
+### tickets テーブル
+
+| Column   | Type       |  Options                       |
+| -------- | ---------- | ------------------------------ |
+| user     | references | null: false, foreign_key: true |
+| event    | references | null: false, foreign_key: true |
+| comment  | string     | null: false                    |
+
+
+#### Association
+
+-- belongs_to :user
+-- belongs_to :event
