@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   end
 
   resources :retirements
+
+  get 'status' => 'status#index', defaults: {format: 'json'}
 end
