@@ -15,7 +15,9 @@ class Event < ApplicationRecord
     validates :end_at
   end
   validate :start_at_should_be_before_end_at
-  validates :image, content_type: [:png, :jpg, :jpeg]
+  validates :image, 
+    content_type: [:png, :jpg, :jpeg],
+    size: { less_than_or_equal_to: 10.megabytes }
 
   def created_by?(user)
     return false unless user
