@@ -44,8 +44,7 @@ https://go-event.herokuapp.com/
 
 ## 実装した機能についてのGIFと説明
 
-![GitHubログイン]
-(https://gyazo.com/38e738775d1fe4c3a18c3e318a91d836)
+![GitHubログイン](https://gyazo.com/38e738775d1fe4c3a18c3e318a91d836)
 
 
 ## 実装予定の機能	
