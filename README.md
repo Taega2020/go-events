@@ -45,7 +45,7 @@ https://go-event.herokuapp.com/
 ## 実装した機能についてのGIFと説明
 
 #### ログイン機能
-![ログイン機能]](https://user-images.githubusercontent.com/73846042/103940417-a1f05000-5170-11eb-9a6f-dbeb0a79e135.mp4)
+![ログイン機能](https://user-images.githubusercontent.com/73846042/103940417-a1f05000-5170-11eb-9a6f-dbeb0a79e135.mp4)
 
 
 ## 実装予定の機能	
