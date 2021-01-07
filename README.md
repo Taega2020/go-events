@@ -47,6 +47,7 @@ https://go-event.herokuapp.com/
 #### ログイン機能
 ![ログイン機能](https://user-images.githubusercontent.com/73846042/103940417-a1f05000-5170-11eb-9a6f-dbeb0a79e135.mp4)
 
+https://user-images.githubusercontent.com/73846042/103940826-59856200-5171-11eb-9afa-eb276c23a684.mp4
 
 ## 実装予定の機能	
 * deviseでのユーザー登録機能
