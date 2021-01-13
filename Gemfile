@@ -62,3 +62,4 @@ gem 'rails-i18n', '~> 6.0.0'
 gem 'mini_magick'
 gem 'active_storage_validations', '~> 0.8.8'
 gem 'aws-sdk-s3', require: false
+gem 'kaminari', '~> 1.2.0'
